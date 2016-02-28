@@ -13,13 +13,13 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: root
-  password:
+  username: listr_user
+  password: BadKingdom
   socket: /tmp/mysql.sock
 
 development:
   <<: *default
-  database: Listr_development
+  database: Listr_db 
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
