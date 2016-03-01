@@ -1,4 +1,5 @@
-
+<!-- Page: login.html.erb
+	 Description: Form to fill out to login the user -->
 <div>
 	<%= form_tag(:action => 'try_login') do%>
 		<table>
@@ -16,5 +17,6 @@
 			</tr>
 		</table>
 	<%end%>
+	<!-- link to the register page -->
 	<%=link_to("Register", :action => 'register') %>
 </div>

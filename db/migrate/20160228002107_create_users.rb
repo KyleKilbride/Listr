@@ -1,4 +1,9 @@
+# 
+# Migration: create users
+# Description: creates the user database table
+#
 class CreateUsers < ActiveRecord::Migration
+
   def up
     create_table :users do |t|
       t.string "first_name", :limit => 25

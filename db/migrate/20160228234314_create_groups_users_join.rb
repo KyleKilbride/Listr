@@ -1,3 +1,7 @@
+# 
+# Migration: create group users join
+# Description: creates the group users join table
+#
 class CreateGroupsUsersJoin < ActiveRecord::Migration
   def up
     create_table :groups_users, :id => false do |t|

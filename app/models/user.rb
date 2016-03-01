@@ -1,3 +1,7 @@
+# Class: User - extends ActiveRecord
+# Description: holds the secure password gem
+# 			   Has many lists
+#       	   Belongs to many groups
 class User < ActiveRecord::Base
 
 	has_secure_password

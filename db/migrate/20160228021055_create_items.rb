@@ -1,3 +1,7 @@
+# 
+# Migration: create items
+# Description: creates the items database table
+#
 class CreateItems < ActiveRecord::Migration
   def up
     create_table :items do |t|

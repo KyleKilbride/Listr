@@ -1,3 +1,7 @@
+# 
+# Migration: create list
+# Description: creates the list database table
+#
 class CreateLists < ActiveRecord::Migration
   def up
     create_table :lists do |t|

@@ -1,3 +1,7 @@
+# 
+# Migration: create groups
+# Description: creates the group database table
+#
 class CreateGroups < ActiveRecord::Migration
   def up
     create_table :groups do |t|

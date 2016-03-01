@@ -1,6 +1,9 @@
-<h1>Groups#index</h1>
-<p>Find me in app/views/groups/index.html.erb</p>
+<!-- Page: index.html.erb
+	 Description: group page that shows all the groups a current user belongs to -->
+<h1>Welcome <%= @currentUser.first_name + " " + @currentUser.last_name %></h1>
 
+<!-- users groups list -->
+<h3>Your Groups</h3>
 <% @user_groups.each do |group| %>
 	<%= link_to("#{group.name}", :controller => 'groups', :action => 'show', :id => group.id) %> <br />
 <% end %>

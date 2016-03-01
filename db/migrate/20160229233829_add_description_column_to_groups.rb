@@ -1,3 +1,7 @@
+# 
+# Migration: add description column to groups
+# Description: Adds the description column to the group tables
+#
 class AddDescriptionColumnToGroups < ActiveRecord::Migration
   
   def up
