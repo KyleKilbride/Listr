@@ -1,0 +1,20 @@
+
+<div>
+	<%= form_tag(:action => 'try_login') do%>
+		<table>
+			<tr>
+				<td><%= label_tag(:email) %></td>
+				<td> <%= text_field_tag(:email) %></td>
+			</tr>
+			<tr>
+				<td><%= label_tag(:password) %></td>
+				<td> <%= password_field_tag(:password) %></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td><%= submit_tag("Login Now") %></td>
+			</tr>
+		</table>
+	<%end%>
+	<%=link_to("Register", :action => 'register') %>
+</div>
