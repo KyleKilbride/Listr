@@ -18,12 +18,11 @@
 	    </div>
         <div class="collapse navbar-collapse">
 	        <ul class="nav navbar-nav">
-	        	<% if session[:user_id] %> 
-		        	<li><%=link_to "Groups", {:controller => 'groups', :action => 'index'}%></li>
-		        <% end %>	
+	        	<li><%=link_to "New Group", {:controller => 'groups', :action => 'new'}%></li>
 	        </ul>
 	        <% if session[:user_id] %> 
 		    <ul class="nav navbar-nav navbar-right">
+		    	<!-- <li>Hello, <% session[:user_name] %></li> -->
 		        <li><%=link_to "Logout", {:controller => 'access', :action => 'logout'}%></li>
 		    </ul> 
 		    <% end %>

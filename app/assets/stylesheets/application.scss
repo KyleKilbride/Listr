@@ -14,12 +14,27 @@
  *= require_self
  */
 
- body{
- 	margin: 0;
- 	padding: 0;
- }
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
- .register_form{
+body{
+	margin: 0;
+	padding: 0;
+}
+ 
+.register_form{
  	height: 100%;
  	width: 100%;
- }
+}
+ 
+.content_container{
+	margin: 10%;
+	width: 100%;
+
+	.form_container{
+		width: 80%;
+	}
+}
+
+
+ 

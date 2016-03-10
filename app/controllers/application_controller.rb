@@ -18,6 +18,7 @@ class ApplicationController < ActionController::Base
   		redirect_to(:controller => 'access', :action => 'login')
   		return false
   	else
+     
   		return true
   	end
   end

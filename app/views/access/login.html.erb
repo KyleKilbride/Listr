@@ -1,22 +1,22 @@
 <!-- Page: login.html.erb
 	 Description: Form to fill out to login the user -->
-<div>
-	<%= form_tag(:action => 'try_login') do%>
-		<table>
-			<tr>
-				<td><%= label_tag(:email) %></td>
-				<td> <%= text_field_tag(:email) %></td>
-			</tr>
-			<tr>
-				<td><%= label_tag(:password) %></td>
-				<td> <%= password_field_tag(:password) %></td>
-			</tr>
-			<tr>
-				<td>&nbsp;</td>
-				<td><%= submit_tag("Login Now") %></td>
-			</tr>
-		</table>
-	<%end%>
+<div class="col-sm-12 content_container">
+	<div class="form_container">
+		<h1>Login</h1>
+		<%= form_tag({:action => 'try_login'}, class: 'form-horizontal') do%>
+			  <div class="form-group">
+			    <%= label_tag 'Email', nil, class: "control-label" %>
+			    <%= text_field_tag :email, nil, class: "form-control" %>
+			  </div>
+			  <div class="form-group">
+			    <%= label_tag 'Password', nil, class: "control-label" %>
+			    <%= password_field_tag :password, nil, class: "form-control" %>
+			  </div>		  
+			  <div class="form-group">
+			    <%= submit_tag "Login" , class: "btn" %>
+			    <%=link_to "Register", {:action => 'register'}, class: "btn"%>
+			  </div>
+		<% end %>
+	</div>
 	<!-- link to the register page -->
-	<%=link_to("Register", :action => 'register') %>
 </div>

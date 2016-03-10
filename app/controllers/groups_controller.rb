@@ -2,6 +2,10 @@
 # Description: 
 #   takes care of the creation, the showing, and listing of groups
 class GroupsController < ApplicationController
+
+  # choose a different layout 
+  layout 'group'
+
   # Action: index
   # Description: 
   #   grabs the current user

@@ -27,6 +27,7 @@ class AccessController < ApplicationController
   		end
   	end
   	if authorized_user
+      session[:user_name] = authorized_user.first_name + " " + authorized_user.last_name
   		session[:user_id] = authorized_user.id
   		session[:user_email] = authorized_user.email
   		redirect_to(:controller => 'home', :action => 'index')
