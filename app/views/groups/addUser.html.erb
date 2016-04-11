@@ -1,0 +1,17 @@
+<!-- Page: addUser.html.erb
+	 Description: page that shows the users and you can select one or more to add to your group.
+	 Author: Kyle Klbride
+	-->
+<div class="col-sm-12 content_container">	
+<h1>All Users</h1> 
+	<%= form_tag({:action => 'try_add_to_group', :id => @currentGroup.id}, class: 'form-horizontal') do%>
+		<% @users.each do |u| %>
+			<% if u.id != @currentUser.id %>
+				<div class="checkbox">
+					<label><%= check_box_tag "user_ids[]", u.id %> <%= u.first_name + " " + u.last_name %></label>
+				</div>
+			<% end %>
+		<% end %>
+		<%= submit_tag "Add Users" , class: "btn" %>
+	<% end %>
+</div>

@@ -1,5 +1,11 @@
 <!-- 
 Page: index.html.erb
 Description: main page, links to other pages
+Author: Kyle Kilbride
  -->
+<% if @numInvites != 0 %>
+	<div class="alert alert-info" role="alert">
+		<p>Looks like you have <%= @numInvites %> new invites! Click <%= link_to("here", {:controller => 'groups', :action => 'invites', :id => session[:user_id]}) %> to see them.</p>
+	</div>
+<% end %>
 <h1>Welcome to Listr</h1> 

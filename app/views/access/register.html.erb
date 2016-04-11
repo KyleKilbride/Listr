@@ -1,5 +1,7 @@
 <!-- Page: register.html.erb
-	 Description: Form to fill out to register a new user -->
+	 Description: Form to fill out to register a new user 
+	 Author: Kyle Klbride
+	-->
 <div class="col-sm-12 content_container">
 	<div class="form_container">
 		<h1>Register</h1>
@@ -18,8 +20,12 @@
 			  </div>		  
 			  <div class="form-group">
 			    <%= label_tag 'Password', nil, class: "control-label" %>
-			    <%= text_field_tag :password, nil, class: "form-control" %>
+			    <%= password_field_tag :password, nil, class: "form-control" %>
 			  </div>
+			  <div class="form-group">
+			    <%= label_tag 'Confirm Password', nil, class: "control-label" %>
+			    <%= password_field_tag :conf_password, nil, class: "form-control" %>
+			  </div>			  
 			  <div class="form-group">
 			    <%= submit_tag "Register" , class: "btn" %>
 			  </div>

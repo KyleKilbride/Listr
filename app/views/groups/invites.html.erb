@@ -1,0 +1,15 @@
+<!-- Page: invites.html.erb
+	 Description: lists the current invites that belong to a user.
+	 Author: Kyle Klbride
+	-->
+<div class="list-group">
+<h3>Invites</h3>
+	<% @groupInvites.each do |g| %>
+		<li class="list-group-item">
+			<h4 class="list-group-item-heading"><%= g.name %></h4>
+	    	<p class="list-group-item-text"><%= g.description %></p>
+	    	<%= button_to "Accept", {:controller => 'groups', :action => 'accept_invite', :id => g.id}, class: "btn btn-success" %>
+	    	<%= button_to "Decline", {:controller => 'groups', :action => 'decline_invite', :id => g.id}, class: "btn btn-danger" %>
+		</li>				
+	<% end %>	
+</div>

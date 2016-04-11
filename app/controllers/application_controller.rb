@@ -1,3 +1,6 @@
+#File: application_controller.rb
+#Description: This is the main controller for all the global functionality that spans the entire program
+#Author: Kyle Kilbride
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -6,6 +9,13 @@ class ApplicationController < ActionController::Base
   # before_action describes what method to call before accessing any of the other action.
   # In this case we want to validate that the user is currently logged in via session variables
   before_action :confirm_logged_in, :except => [:login, :try_login, :logout, :register, :try_register]
+
+  # Action: Returns the user object representing the logged in user. 
+  # Author: Kyle Kilbride
+  def getCurrentUser
+    return User.find(session[:user_id])
+  end
+
 
   private 
   # Action: confirm_logged_in

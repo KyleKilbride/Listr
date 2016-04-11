@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
+  resources :users
+
   # get 'groups/index'
 
   # get 'groups/show'

@@ -58,12 +58,17 @@ class AccessController < ApplicationController
   def try_register
   	#attempt to register
   	if params[:first_name].present? && params[:last_name].present? && params[:email].present? && params[:password].present?
-  		new_user = User.create(:first_name => params[:first_name], :last_name => params[:last_name], :email => params[:email], :password => params[:password])
-  		if new_user
-		session[:user_id] = new_user.id
-		session[:user_email] = new_user.email
-  		redirect_to(:controller => 'home', :action => 'index')
-  		end
+  		if params[:password].eql? params[:conf_password]
+        @new_user = User.create(:first_name => params[:first_name], :last_name => params[:last_name], :email => params[:email], :password => params[:password])
+
+        if @new_user
+      		session[:user_id] = @new_user.id
+      		session[:user_email] = @new_user.email
+      		redirect_to(:controller => 'home', :action => 'index')
+        end
+      else
+          redirect_to(:controller => 'access', :action => 'register')
+      end  
   	end
   end
 

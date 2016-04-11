@@ -3,15 +3,8 @@
 # This model initially had no columns defined.  If you add columns to the
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
-#
-#Author: Kyle Kilbride
-
-kyle_kyleGroup:
-  user_id: 1
-  group_id: 1
-  name: Kyle's List
-
-angie_kyleGroup:
+# Author Kyle Kilbride
+kyle_to_angie:
   user_id: 2
   group_id: 1
-  name: Angie's List
+  response: false

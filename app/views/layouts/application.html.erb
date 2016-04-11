@@ -1,6 +1,7 @@
 <!-- 
 	Page: application.html.erb
 	Description: main layout
+	Author: Kyle Kilbride
  -->
 <!DOCTYPE html>
 <html>
@@ -24,6 +25,7 @@
 	        </ul>
 	        <% if session[:user_id] %> 
 		    <ul class="nav navbar-nav navbar-right">
+		    	<li><%=link_to "Profile", {:controller => 'user', :action => 'show', :id => session[:user_id]}%></li>
 		        <li><%=link_to "Logout", {:controller => 'access', :action => 'logout'}%></li>
 		    </ul> 
 		    <% end %>

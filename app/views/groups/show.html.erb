@@ -2,9 +2,24 @@
 	Page: show.html.erb
 	Description: 
 		Used to show a certain groups information.
+	Author: Kyle Kilbride
  -->
 
 <!-- HTML code to show the Group Name, Owner Name, and Group Description -->
-<h1><%= @currentGroup.name %></h1>
-<h3>Owner: <%= @groupOwnerName %></h3>
-<p><%= @currentGroup.description %></p>
+
+<div class="row">
+	<div class="col-sm-12">
+		<h1><%= @currentGroup.name %></h1>
+		<h3>Owner: <%= @groupOwnerName %></h3>
+		<p><%= @currentGroup.description %></p>
+		<% if @currentUser.id === @groupOwner.id %>
+			<%= button_to "Add User", {:action => 'addUser', :id => @currentGroup.id}%>
+		<% end %>			
+	</div>
+</div>
+
+
+
+	
+
+

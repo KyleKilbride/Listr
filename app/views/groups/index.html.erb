@@ -1,9 +1,16 @@
 <!-- Page: index.html.erb
-	 Description: group page that shows all the groups a current user belongs to -->
-<h1>Welcome <%= @currentUser.first_name + " " + @currentUser.last_name %></h1>
+	 Description: group page that shows all the groups a current user belongs to 
+	 Author: Kyle Kilbride
+	-->
 
-<!-- users groups list -->
-<h3>Your Groups</h3>
-<% @user_groups.each do |group| %>
-	<%= link_to("#{group.name}", :controller => 'groups', :action => 'show', :id => group.id) %> <br />
-<% end %>
+	<h1>Welcome <%= @currentUser.first_name + " " + @currentUser.last_name %></h1>
+
+	<div class="list-group">
+	<h3>Your Groups</h3>
+		<% @user_groups.each do |group| %>
+			<%= link_to({:controller => 'groups', :action => 'show', :id => group.id}, class: "list-group-item") do%>
+				<h4 class="list-group-item-heading"><%= group.name %></h4>
+		    	<p class="list-group-item-text"><%= group.description %></p>
+			<% end %>
+		<% end %>	
+	</div>
